@@ -1,0 +1,27 @@
+server:
+    port: 9000
+
+spring:
+
+    mvc:
+        view:
+            suffix: .html
+
+    jpa:
+        show-sql: true
+        database: mysql
+        hibernate:
+            ddl-auto: update
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
+    datasource:
+        driver-class-name: org.mariadb.jdbc.Driver
+        url: jdbc:mariadb://choi.c2q71xxixuky.ap-northeast-2.rds.amazonaws.com/example
+        username: choi
+        password: todaud135
+logging:
+    level:
+        org:
+            springframework:
+                security=debug
+    
