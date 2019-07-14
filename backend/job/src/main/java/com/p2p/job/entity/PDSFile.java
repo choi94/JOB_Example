@@ -20,6 +20,5 @@ public class PDSFile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long fno;
-
     private String pdsfile;
 }
