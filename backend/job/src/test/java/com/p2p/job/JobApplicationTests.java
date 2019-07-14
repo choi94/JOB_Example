@@ -70,13 +70,15 @@ public class JobApplicationTests {
 		QFreeBoard boards = QFreeBoard.freeBoard;
 		QFreeBoardReply boardReply = QFreeBoardReply.freeBoardReply;
 
-		queryFactory.from(boards)
-			.join(boards.replies, boardReply)
+		queryFactory.from(boardReply)
+			.leftJoin(boardReply.board, boards).fetchJoin()
 			// .on(boards.bno.eq(boardReply.rno))
 			// .where(boards.writer.eq("user0"))
 			// .orderBy(boards.bno.desc())
 			.fetch()
-			.forEach(System.out::println);
+			.forEach(arr -> {
+				System.out.println(arr.toString());
+			});
 
 		// builder.and(boards.bno.gt(190L));
 
